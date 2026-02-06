@@ -3,105 +3,509 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BALAJI V | AI/ML Engineer | Production ATS Live</title>
+    <title>Balaji V | AI/ML Engineer | Production Deployments</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 80px 20px; }
-        h1 { font-size: 3em; margin-bottom: 10px; }
-        .subtitle { font-size: 1.5em; opacity: 0.9; }
-        .badge { background: #ff6b6b; color: white; padding: 8px 16px; border-radius: 25px; font-weight: bold; text-decoration: none; display: inline-block; margin: 10px; }
-        section { padding: 60px 0; }
-        .projects { background: #f8f9fa; }
-        .project-card { background: white; margin: 30px 0; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s; }
-        .project-card:hover { transform: translateY(-5px); }
-        .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
-        .tech { background: #e3f2fd; padding: 6px 12px; border-radius: 20px; font-size: 0.9em; font-weight: 500; }
-        .contact { background: #667eea; color: white; text-align: center; }
-        @media (max-width: 768px) { h1 { font-size: 2em; } .badge { display: block; margin: 10px auto; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            overflow-x: hidden;
+            background: #0f172a;
+            color: #f1f5f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.1"><polygon points="0,100 1000,0 1000,100"/></svg>');
+            background-size: cover;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            opacity: 0.95;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #f1f5f9;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #3b82f6, #a78bfa);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* About */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #10b981, #f59e0b, #ef4444);
+            background-size: 300% 100%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+
+        .project-metrics {
+            background: rgba(59, 130, 246, 0.2);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 2rem 0;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(167, 139, 250, 0.2));
+            color: #60a5fa;
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            background: rgba(59, 130, 246, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        /* Experience */
+        .experience {
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .experience-item {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border-left: 5px solid #10b981;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            text-align: center;
+        }
+
+        .contact-info {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .projects-grid { grid-template-columns: 1fr; }
+            section { padding: 60px 0; }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>BALAJI V</h1>
-        <p class="subtitle">AI/ML Engineer | Production ATS Deployed Live</p>
-        <a href="https://ats-resume-analyzer.streamlit.app" class="badge" target="_blank">🚀 LIVE ATS Demo</a>
-        <a href="https://github.com/Balaji-2001/ATS_Resume_Analyzer" class="badge" target="_blank">📂 GitHub</a>
-        <a href="mailto:balajivasanthakumar2001@gmail.com" class="badge">✉️ Contact</a>
+        <div class="container">
+            <h1>Balaji V</h1>
+            <p class="subtitle">AI/ML Engineer | Production ATS Deployed Live | Chennai, Tamil Nadu</p>
+            <div class="hero-buttons">
+                <a href="https://ats-resume-analyzer.streamlit.app" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-rocket"></i> Live ATS Demo (92/100)
+                </a>
+                <a href="https://github.com/Balaji-2001" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i> GitHub Repositories
+                </a>
+                <a href="mailto:balajivasanthakumar2001@gmail.com" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+            </div>
+        </div>
     </header>
 
     <div class="container">
+        <!-- About -->
         <section id="about">
-            <h2 style="text-align: center; margin-bottom: 40px;">Building Production AI Systems</h2>
-            <p style="font-size: 1.2em; text-align: center; max-width: 800px; margin: 0 auto;">
-                Deployed <strong>live ATS scoring 92/100 accuracy</strong> using LangChain RAG + FAISS.
-                Experienced in computer vision (90% CNN accuracy), time-series forecasting (80%+),
-                and production ML deployment. Ready for AI/ML Engineer roles in Chennai.
-            </p>
-        </section>
-
-        <section class="projects">
-            <h2 style="text-align: center; margin-bottom: 50px;">Featured Projects</h2>
-            
-            <div class="project-card">
-                <h3>🤖 ATS Resume Analyzer <span style="color: #4CAF50;">LIVE</span></h3>
-                <p><strong>Production RAG pipeline</strong> scoring resumes vs JDs (92/100 accuracy)</p>
-                <div class="tech-stack">
-                    <span class="tech">LangChain</span>
-                    <span class="tech">FAISS</span>
-                    <span class="tech">Streamlit Cloud</span>
-                    <span class="tech">TF-IDF</span>
-                    <span class="tech">PDF Processing</span>
-                </div>
-                <a href="https://ats-resume-analyzer.streamlit.app" class="badge" target="_blank">🚀 Live Demo</a>
-                <a href="https://github.com/Balaji-2001/ATS_Resume_Analyzer" class="badge" target="_blank">📂 Source</a>
-            </div>
-
-            <div class="project-card">
-                <h3>🔥 Stock Market Forecasting</h3>
-                <p>LSTM multi-output regression achieving <strong>80%+ prediction accuracy</strong> on Winton dataset</p>
-                <div class="tech-stack">
-                    <span class="tech">LSTM</span>
-                    <span class="tech">Python</span>
-                    <span class="tech">MSE Evaluation</span>
-                    <span class="tech">Time Series</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>🤲 Sign Language Detection</h3>
-                <p>Real-time CNN gesture recognition achieving <strong>90% accuracy</strong> with live webcam</p>
-                <div class="tech-stack">
-                    <span class="tech">TensorFlow</span>
-                    <span class="tech">Keras</span>
-                    <span class="tech">OpenCV</span>
-                    <span class="tech">CNN</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <h3>🛣️ Pothole Detection</h3>
-                <p>YOLOv8 model trained on 1,000+ images for real-time road analysis</p>
-                <div class="tech-stack">
-                    <span class="tech">YOLOv8</span>
-                    <span class="tech">OpenCV</span>
-                    <span class="tech">Computer Vision</span>
-                </div>
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>Production-ready AI/ML Engineer specializing in end-to-end machine learning systems. Recently deployed <strong>live ATS Resume Analyzer</strong> achieving 92/100 accuracy using LangChain RAG pipeline with FAISS vector search and TF-IDF keyword matching.</p>
+                <br>
+                <p>Experienced in computer vision achieving 90% CNN accuracy, time-series forecasting with 80%+ prediction rates, and production ML deployment. Chennai-based and actively seeking full-time AI/ML Engineer opportunities.</p>
             </div>
         </section>
 
-        <section class="contact">
-            <h2 style="margin-bottom: 20px;">Let's Build AI Together</h2>
-            <p style="font-size: 1.2em; margin-bottom: 30px;">
-                Chennai-based AI/ML Engineer ready for full-time roles.<br>
-                +91 7305283502 | balajivasanthakumar2001@gmail.com
-            </p>
-            <a href="https://www.linkedin.com/in/balaji070701" class="badge" target="_blank" style="background: #0e76a8;">LinkedIn</a>
-            <a href="https://github.com/Balaji-2001" class="badge" target="_blank">GitHub</a>
-            <a href="mailto:balajivasanthakumar2001@gmail.com" class="badge">Email</a>
-        </section>
-    </div>
-</body>
-</html>
+        <!-- Projects -->
+        <section id="projects" class="projects-section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- ATS Resume Analyzer -->
+                <div class="project-card">
+                    <h3 class="project-title">ATS Resume Analyzer</h3>
+                    <div class="project-metrics">
+                        <strong>Production Deployment</strong> | 92/100 ATS Score Accuracy | Live Demo Available
+                    </div>
+                    <p>End-to-end RAG pipeline that scores resumes against job descriptions with real-time keyword gap analysis and missing skills detection.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">FAISS</span>
+                        <span class="tech-tag">Streamlit Cloud</span>
+                        <span class="tech-tag">TF-IDF</span>
+                        <span class="tech-tag">PDF Processing</span>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://ats-resume-analyzer.streamlit.app" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" target="_blank">View Live Demo</a>
+                        <a href="https://github.com/Balaji-2001/ATS_Resume_Analyzer" class="btn btn-secondary" style="padding: 10px 24px; font-size: 0.9rem; margin-left: 0.5rem;" target="_blank">Source Code</a>
+                    </div>
+                </div>
 
+                <!-- Winton Stock Market Challenge -->
+                <div class="project-card">
+                    <h3 class="project-title">Winton Stock Market Challenge</h3>
+                    <div class="project-metrics">
+                        <strong>80%+ Prediction Accuracy</strong> | Multi-output LSTM Regression
+                    </div>
+                    <p>Advanced time-series forecasting model using LSTM networks for multi-output stock price prediction on Winton Challenge dataset.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">Time Series</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">MSE Evaluation</span>
+                    </div>
+                </div>
+
+                <!-- Sign Language Detection -->
+                <div class="project-card">
+                    <h3 class="project-title">Sign Language Detection</h3>
+                    <div class="project-metrics">
+                        <strong>90% Accuracy</strong> | Real-time CNN Gesture Recognition
+                    </div>
+                    <p>Live webcam-based gesture recognition system using convolutional neural networks for accessibility applications.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Keras</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">CNN</span>
+                    </div>
+                </div>
+
+                <!-- Pothole Detection -->
+                <div class="project-card">
+                    <h3 class="project-title">Pothole Detection (YOLOv8)</h3>
+                    <div class="project-metrics">
+                        <strong>1,000+ Training Images</strong> | Real-time Road Analysis
+                    </div>
+                    <p>YOLOv8 object detection model trained for real-time pothole identification and road infrastructure monitoring.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">YOLOv8</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Computer Vision</span>
+                    </div>
+                </div>
+
+                <!-- Wind Turbines Anomaly Detection -->
+                <div class="project-card">
+                    <h3 class="project-title">Wind Turbines Anomaly Detection</h3>
+                    <div class="project-metrics">
+                        <strong>Time-series Anomaly Detection</strong> | Predictive Maintenance
+                    </div>
+                    <p>Industrial IoT application for predictive maintenance using time-series anomaly detection algorithms.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Anomaly Detection</span>
+                        <span class="tech-tag">Time Series</span>
+                        <span class="tech-tag">IoT</span>
+                    </div>
+                </div>
+
+                <!-- Asian Paints Stock Prediction -->
+                <div class="project-card">
+                    <h3 class="project-title">Asian Paints Stock Prediction</h3>
+                    <div class="project-metrics">
+                        <strong>Advanced Statistical ML</strong> | Financial Time Series
+                    </div>
+                    <p>Stock price forecasting model using ensemble statistical and machine learning techniques for Indian market data.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Stock Prediction</span>
+                        <span class="tech-tag">Statistical ML</span>
+                        <span class="tech-tag">Ensemble Methods</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h4>Python</h4>
+                    <p>Machine Learning, Data Science, Web Development</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>Machine Learning</h4>
+                    <p>Deep Learning, Computer Vision, NLP</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4>Vector Databases</h4>
+                    <p>FAISS, LangChain RAG, Embeddings</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Time Series</h4>
+                    <p>LSTM, Forecasting, Anomaly Detection</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h4>Deployment</h4>
+                    <p>Streamlit Cloud, Docker, Production ML</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4>Computer Vision</h4>
+                    <p>YOLOv8, OpenCV, CNN Architectures</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="experience">
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3 style="font-size: 1.8rem; color: #10b981; margin-bottom: 1rem;">Guest Lecturer</h3>
+                <p style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 1rem;">Theivanai Ammal College for Women</p>
+                <p style="color: #cbd5e1; font-size: 1.1rem;">June 2024 - Present</p>
+                <p style="margin-top: 1.5rem; color: #e2e8f0;">Delivered Python, Django, and Machine Learning lectures to 100+ students. Mentored hands-on projects including LangChain RAG implementations and production ML deployments.</p>
+            </div>
+            <div class="experience-item">
+                <h3 style="font-size: 1.8rem; color: #10b981; margin-bottom: 1rem;">Data Scientist Intern</h3>
+                <p style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 1rem;">Wright Logic</p>
+                <p style="color: #cbd5e1; font-size: 1.1rem;">October 2023 - February 2024</p>
+                <p style="margin-top: 1.5rem; color: #e2e8f0;">Developed LSTM stock forecasting models (80%+ accuracy) and CNN gesture recognition systems (90% accuracy). Implemented end-to-end ML pipelines for production use.</p>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Let's Build Something Amazing</h2>
+                <div class="contact-info">
+                    <p>Chennai-based AI/ML Engineer available for full-time opportunities</p>
+                    <p style="font-size: 1.4rem; margin-top: 1rem; font-weight: 600;">
+                        <strong>+91 7305283502</strong> | <strong>balajivasanthakumar2001@gmail.com</strong>
+                    </p>
+                </div>
+                <div class="hero-buttons" style="justify-content: center;">
+                    <a href="https://www.linkedin.com/in/balaji070701" class="btn btn-primary" target="_blank" style="background: linear-gradient(135deg, #0e76a8, #0866ca);">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/Balaji-2001" class="btn btn-primary" target="_blank" style="background: linear-gradient(135deg, #333, #555);">
