@@ -15,10 +15,9 @@
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.7;
-            color: #2d3748;
-            overflow-x: hidden;
             background: #0f172a;
             color: #f1f5f9;
+            overflow-x: hidden;
         }
 
         .container {
@@ -141,7 +140,6 @@
             border-radius: 2px;
         }
 
-        /* About */
         .about-content {
             max-width: 900px;
             margin: 0 auto;
@@ -150,7 +148,6 @@
             line-height: 1.8;
         }
 
-        /* Projects */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -166,6 +163,8 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card::before {
@@ -204,26 +203,25 @@
             border-radius: 12px;
             margin: 1.5rem 0;
             border-left: 4px solid #3b82f6;
+            font-size: 0.95rem;
         }
 
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
         }
 
         .tech-tag {
-            background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(167, 139, 250, 0.2));
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(167, 139, 250, 0.1));
             color: #60a5fa;
-            padding: 0.5rem 1.25rem;
+            padding: 0.4rem 1rem;
             border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 500;
+            font-size: 0.85rem;
             border: 1px solid rgba(96, 165, 250, 0.3);
         }
 
-        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -251,13 +249,12 @@
             margin-bottom: 1rem;
         }
 
-        /* Experience */
         .experience {
             background: rgba(15, 23, 42, 0.5);
         }
 
         .experience-item {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto 3rem;
             padding: 2.5rem;
             background: rgba(255, 255, 255, 0.05);
@@ -265,7 +262,6 @@
             border-left: 5px solid #10b981;
         }
 
-        /* Contact */
         .contact-section {
             background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
             text-align: center;
@@ -277,105 +273,85 @@
             opacity: 0.95;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero-buttons { flex-direction: column; align-items: center; }
             .projects-grid { grid-template-columns: 1fr; }
-            section { padding: 60px 0; }
         }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(15, 23, 42, 0.5);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #3b82f6, #10b981);
-            border-radius: 4px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.5); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #3b82f6, #10b981); border-radius: 4px; }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
         <div class="container">
             <h1>BALAJI V</h1>
             <p class="subtitle">AI/ML Engineer | Production ATS Deployed Live | Chennai, Tamil Nadu</p>
             <div class="hero-buttons">
                 <a href="https://ats-resume-analyzer.streamlit.app" class="btn btn-primary" target="_blank">
-                    <i class="fas fa-rocket"></i> Live ATS Demo (92/100)
+                    <i class="fas fa-rocket"></i> Live ATS Demo
                 </a>
                 <a href="https://github.com/Balaji-2001" class="btn btn-secondary" target="_blank">
-                    <i class="fab fa-github"></i> GitHub Repositories
+                    <i class="fab fa-github"></i> GitHub Repos
                 </a>
                 <a href="mailto:balajivasanthakumar2001@gmail.com" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i> Get In Touch
+                    <i class="fas fa-envelope"></i> Contact Me
                 </a>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <!-- About -->
         <section id="about">
             <h2>About Me</h2>
             <div class="about-content">
-                <p>Production-ready AI/ML Engineer specializing in end-to-end machine learning systems. Recently deployed <strong>live ATS Resume Analyzer</strong> achieving 92/100 accuracy using LangChain RAG pipeline with FAISS vector search and TF-IDF keyword matching.</p>
-                <br>
-                <p>Experienced in computer vision achieving 90% CNN accuracy, time-series forecasting with 80%+ prediction rates, and production ML deployment. Chennai-based and actively seeking full-time AI/ML Engineer opportunities.</p>
+                <p>Production-ready AI/ML Engineer specializing in end-to-end machine learning systems. Recently deployed a <strong>live ATS Resume Analyzer</strong> achieving high accuracy using a LangChain RAG pipeline with FAISS vector search.</p>
+                <p style="margin-top: 1rem;">Experienced in computer vision (90% CNN accuracy), time-series forecasting (80%+ prediction rates), and production ML deployment. Actively seeking full-time AI/ML Engineer opportunities.</p>
             </div>
         </section>
 
-        <!-- Projects -->
-        <section id="projects" class="projects-section">
+        <section id="projects">
             <h2>Featured Projects</h2>
             <div class="projects-grid">
-                <!-- ATS Resume Analyzer -->
+                
                 <div class="project-card">
                     <h3 class="project-title">ATS Resume Analyzer</h3>
                     <div class="project-metrics">
-                        <strong>Production Deployment</strong> | 92/100 ATS Score Accuracy | Live Demo Available
+                        <strong>Production Deployment</strong> | RAG Pipeline | Live Demo
                     </div>
-                    <p>End-to-end RAG pipeline that scores resumes against job descriptions with real-time keyword gap analysis and missing skills detection.</p>
+                    <p>End-to-end system scoring resumes against JDs with real-time keyword gap analysis and missing skills detection.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">LangChain</span>
                         <span class="tech-tag">FAISS</span>
-                        <span class="tech-tag">Streamlit Cloud</span>
+                        <span class="tech-tag">Streamlit</span>
                         <span class="tech-tag">TF-IDF</span>
-                        <span class="tech-tag">PDF Processing</span>
                     </div>
-                    <div style="margin-top: 1.5rem;">
-                        <a href="https://ats-resume-analyzer.streamlit.app" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;" target="_blank">View Live Demo</a>
-                        <a href="https://github.com/Balaji-2001/ATS_Resume_Analyzer" class="btn btn-secondary" style="padding: 10px 24px; font-size: 0.9rem; margin-left: 0.5rem;" target="_blank">Source Code</a>
+                    <div style="margin-top: auto; padding-top: 1.5rem;">
+                        <a href="https://ats-resume-analyzer.streamlit.app" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;" target="_blank">View Live</a>
                     </div>
                 </div>
 
-                <!-- Winton Stock Market Challenge -->
                 <div class="project-card">
-                    <h3 class="project-title">Winton Stock Market Challenge</h3>
+                    <h3 class="project-title">Winton Stock Challenge</h3>
                     <div class="project-metrics">
-                        <strong>80%+ Prediction Accuracy</strong> | Multi-output LSTM Regression
+                        <strong>80%+ Accuracy</strong> | Multi-output LSTM Regression
                     </div>
-                    <p>Advanced time-series forecasting model using LSTM networks for multi-output stock price prediction on Winton Challenge dataset.</p>
+                    <p>Advanced time-series forecasting model using LSTM networks for multi-output stock price prediction.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">LSTM</span>
                         <span class="tech-tag">Time Series</span>
                         <span class="tech-tag">Python</span>
-                        <span class="tech-tag">MSE Evaluation</span>
                     </div>
                 </div>
 
-                <!-- Sign Language Detection -->
                 <div class="project-card">
                     <h3 class="project-title">Sign Language Detection</h3>
                     <div class="project-metrics">
-                        <strong>90% Accuracy</strong> | Real-time CNN Gesture Recognition
+                        <strong>90% Accuracy</strong> | Real-time CNN Recognition
                     </div>
-                    <p>Live webcam-based gesture recognition system using convolutional neural networks for accessibility applications.</p>
+                    <p>Live webcam-based gesture recognition system using convolutional neural networks for accessibility.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">TensorFlow</span>
                         <span class="tech-tag">Keras</span>
@@ -384,13 +360,12 @@
                     </div>
                 </div>
 
-                <!-- Pothole Detection -->
                 <div class="project-card">
                     <h3 class="project-title">Pothole Detection (YOLOv8)</h3>
                     <div class="project-metrics">
-                        <strong>1,000+ Training Images</strong> | Real-time Road Analysis
+                        <strong>1,000+ Training Images</strong> | Road Analysis
                     </div>
-                    <p>YOLOv8 object detection model trained for real-time pothole identification and road infrastructure monitoring.</p>
+                    <p>YOLOv8 object detection model trained for real-time pothole identification and infrastructure monitoring.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">YOLOv8</span>
                         <span class="tech-tag">OpenCV</span>
@@ -398,41 +373,25 @@
                     </div>
                 </div>
 
-                <!-- Wind Turbines Anomaly Detection -->
                 <div class="project-card">
-                    <h3 class="project-title">Wind Turbines Anomaly Detection</h3>
+                    <h3 class="project-title">Asian Paints Prediction</h3>
                     <div class="project-metrics">
-                        <strong>Time-series Anomaly Detection</strong> | Predictive Maintenance
-                    </div>
-                    <p>Industrial IoT application for predictive maintenance using time-series anomaly detection algorithms.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Anomaly Detection</span>
-                        <span class="tech-tag">Time Series</span>
-                        <span class="tech-tag">IoT</span>
-                    </div>
-                </div>
-
-                <!-- Asian Paints Stock Prediction -->
-                <div class="project-card">
-                    <h3 class="project-title">Asian Paints Stock Prediction</h3>
-                    <div class="project-metrics">
-                        <strong>Advanced Statistical ML</strong> | Financial Time Series
+                        <strong>Statistical ML</strong> | Financial Time Series
                     </div>
                     <p>Stock price forecasting model using ensemble statistical and machine learning techniques for Indian market data.</p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Stock Prediction</span>
-                        <span class="tech-tag">Statistical ML</span>
                         <span class="tech-tag">Ensemble Methods</span>
+                        <span class="tech-tag">Scikit-Learn</span>
+                        <span class="tech-tag">StatsModels</span>
                     </div>
                 </div>
-                
-                <!-- AI Medical Chatbot -->
+
                 <div class="project-card">
-                    <h3 class="project-title">AI Medical Chatbot/h3>
+                    <h3 class="project-title">AI Medical Chatbot</h3>
                     <div class="project-metrics">
-                        <strong>NLP & Healthcare AI</strong> | Secure SQL Backend
+                        <strong>NLP & Healthcare</strong> | Secure SQL Backend
                     </div>
-                    <p>Designed an AI-powered chatbot to collect patient details and medical concerns, storing data securely in a SQL database for clinical analysis.</p>
+                    <p>AI-powered chatbot designed to collect patient details and medical concerns, storing data securely in SQL.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Django</span>
                         <span class="tech-tag">NLP</span>
@@ -440,88 +399,79 @@
                         <span class="tech-tag">PythonAnywhere</span>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Skills -->
         <section id="skills">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
                     <h4>Python</h4>
-                    <p>Machine Learning, Data Science, Web Development</p>
+                    <p>ML, Data Science, Django</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h4>Machine Learning</h4>
-                    <p>Deep Learning, Computer Vision, NLP</p>
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h4>ML / Deep Learning</h4>
+                    <p>CNN, LSTM, YOLOv8</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h4>Vector Databases</h4>
-                    <p>FAISS, LangChain RAG, Embeddings</p>
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h4>Vector DB</h4>
+                    <p>FAISS, LangChain RAG</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h4>Time Series</h4>
-                    <p>LSTM, Forecasting, Anomaly Detection</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h4>Deployment</h4>
-                    <p>Streamlit Cloud, Docker, Production ML</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
+                    <div class="skill-icon"><i class="fas fa-eye"></i></div>
                     <h4>Computer Vision</h4>
-                    <p>YOLOv8, OpenCV, CNN Architectures</p>
+                    <p>OpenCV, Image Processing</p>
                 </div>
             </div>
         </section>
 
-        <!-- Experience -->
-        <section id="experience" class="experience">
+        <section id="experience">
             <h2>Professional Experience</h2>
+            
             <div class="experience-item">
-                <h3 style="font-size: 1.8rem; color: #10b981; margin-bottom: 1rem;">Guest Lecturer</h3>
+                <h3 style="font-size: 1.8rem; color: #10b981; margin-bottom: 0.5rem;">Guest Lecturer</h3>
                 <p style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 0.3rem;">Theivanai Ammal College of Women | Villupuram, India</p>
-                <p style="color: #cbd5e1; font-size: 1.1rem;">June 2024 - May 2025</p>
-                <p style="margin-top: 1.5rem; color: #e2e8f0;">Delivered interactive lectures and practical labs on Python, Django, Data Science, and Machine Learning to undergraduate and postgraduate students. Mentored students on project development and applied AI/ML concepts for hands-on learning.</p>
+                <p style="color: #cbd5e1; font-size: 1rem; font-weight: bold;">June 2024 - May 2025</p>
+                <p style="margin-top: 1.2rem; color: #e2e8f0;">
+                    Delivered interactive lectures and practical labs on Python, Django, Data Science, and Machine Learning to undergraduate and postgraduate students. Mentored students on project development and applied AI/ML concepts for hands-on learning.
+                </p>
             </div>
-            <div class="experience-item">
-                <h3 style="font-size: 1.8rem; color: #10b981; margin-bottom: 1rem;">Data Scientist Intern</h3>
-                <p style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 1rem;">Wright Logic</p>
-                <p style="color: #cbd5e1; font-size: 1.1rem;">October 2023 - February 2024</p>
-                <p style="margin-top: 1.5rem; color: #e2e8f0;">Engineered high-accuracy **LSTM time-series forecasting models (80%+ accuracy)** and automated **NLP Sentiment Analysis** pipelines using **TensorFlow**. Developed full-cycle data visualization suites for model validation and processed diverse datasets to extract actionable business insights.</p>
-            </div>
-        </div>
 
-        <!-- Contact -->
+            <div class="experience-item" style="border-left-color: #3b82f6;">
+                <h3 style="font-size: 1.8rem; color: #10b981; margin-bottom: 0.5rem;">Data Scientist Intern</h3>
+                <p style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 0.3rem;">Wright Logic | Malaysia (Remote)</p>
+                <p style="color: #cbd5e1; font-size: 1rem; font-weight: bold;">October 2023 - February 2024</p>
+                <p style="margin-top: 1.2rem; color: #e2e8f0;">
+                    Engineered high-accuracy <strong>LSTM time-series forecasting models (80%+ accuracy)</strong> and automated <strong>NLP Sentiment Analysis</strong> pipelines using <strong>TensorFlow</strong>. Developed full-cycle data visualization suites for model validation and processed diverse datasets to extract actionable business insights.
+                </p>
+            </div>
+        </section>
+
         <section id="contact" class="contact-section">
             <div class="container">
                 <h2>Let's Build Something Amazing</h2>
                 <div class="contact-info">
                     <p>Chennai-based AI/ML Engineer available for full-time opportunities</p>
                     <p style="font-size: 1.4rem; margin-top: 1rem; font-weight: 600;">
-                        <strong>+91 7305283502</strong> | <strong>balajivasanthakumar2001@gmail.com</strong>
+                        +91 7305283502 | balajivasanthakumar2001@gmail.com
                     </p>
                 </div>
-                <div class="hero-buttons" style="justify-content: center;">
-                    <a href="https://www.linkedin.com/in/balaji070701" class="btn btn-primary" target="_blank" style="background: linear-gradient(135deg, #0e76a8, #0866ca);">
+                <div class="hero-buttons">
+                    <a href="https://www.linkedin.com/in/balaji070701" class="btn btn-primary" target="_blank" style="background: #0077b5;">
                         <i class="fab fa-linkedin-in"></i> LinkedIn
                     </a>
-                    <a href="https://github.com/Balaji-2001" class="btn btn-primary" target="_blank" style="background: linear-gradient(135deg, #333, #555);">
+                    <a href="https://github.com/Balaji-2001" class="btn btn-secondary">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
 
+    </div>
+
+</body>
+</html>
