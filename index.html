@@ -51,7 +51,7 @@
             margin: 0 auto;
         }
 
-        /* Top HUD Header - Removed absolute sub-text completely */
+        /* Top HUD Header - Kept only the clean name alignment */
         header {
             border: 1px solid var(--accent-cyan);
             background: var(--panel-bg);
@@ -62,7 +62,6 @@
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(10px);
-            position: relative;
         }
 
         h1 {
@@ -73,33 +72,10 @@
             text-shadow: 0 0 10px var(--accent-cyan);
         }
 
-        .subtitle {
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            margin-top: 0.25rem;
-            opacity: 0.8;
-        }
-
         .status-container {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
             font-size: 0.85rem;
-        }
-
-        .status-blink {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent-cyan);
-            border-radius: 50%;
-            margin-right: 6px;
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--accent-cyan); }
-            50% { opacity: 0.2; box-shadow: none; }
         }
 
         /* Master UI Dashboard Grid Layout */
@@ -314,21 +290,23 @@
 
     <div class="container">
         
+        <!-- HEADER APPARATUS -->
         <header>
             <div>
                 <h1>BALAJI V</h1>
-                <div class="subtitle">> AI/ML_ENGINEER_CORE // LEVEL_07</div>
             </div>
             <div class="status-container">
-                <div><span class="status-blink"></span>SYS_NODE: ONLINE</div>
                 <div class="text-muted">LOC: CHENNAI, IN</div>
             </div>
         </header>
 
+        <!-- DASHBOARD BODY CONTAINER -->
         <div class="dashboard-grid">
 
+            <!-- LEFT CONSOLE -->
             <div class="left-column">
                 
+                <!-- IDENTITY PANEL -->
                 <div class="panel">
                     <div class="panel-title"><span>[MODULE: ARCHITECT_INFO]</span></div>
                     <p style="font-size: 0.85rem; margin-bottom: 1rem;">
@@ -351,6 +329,7 @@
                     </div>
                 </div>
 
+                <!-- SKILLS MATRIX -->
                 <div class="panel">
                     <div class="panel-title"><span>[MODULE: CORE_COMPETENCIES]</span></div>
                     
@@ -392,8 +371,10 @@
 
             </div>
 
+            <!-- RIGHT CONSOLE -->
             <div class="right-column">
                 
+                <!-- PIPELINE DEPLOYMENTS -->
                 <div class="panel">
                     <div class="panel-title">
                         <span>[MODULE: LIVE_PIPELINE_DEPLOYMENTS]</span>
@@ -402,6 +383,7 @@
 
                     <div class="projects-grid">
                         
+                        <!-- Project 1 -->
                         <div class="project-card">
                             <div class="project-title">ATS Resume Analyzer</div>
                             <div class="project-metrics">PRODUCTION RUN // RAG PIPELINE // STREAMLIT</div>
@@ -417,6 +399,7 @@
                             </div>
                         </div>
 
+                        <!-- Project 2 -->
                         <div class="project-card">
                             <div class="project-title">Winton Stock Challenge</div>
                             <div class="project-metrics">ACCURACY: 80%+ // MULTI-OUTPUT LSTM</div>
@@ -428,6 +411,7 @@
                             </div>
                         </div>
 
+                        <!-- Project 3 -->
                         <div class="project-card">
                             <div class="project-title">Sign Language Detection</div>
                             <div class="project-metrics">ACCURACY: 90% // REAL-TIME COMPUTER VISION</div>
@@ -440,6 +424,7 @@
                             </div>
                         </div>
 
+                        <!-- Project 4 -->
                         <div class="project-card">
                             <div class="project-title">Pothole Detection (YOLOv8)</div>
                             <div class="project-metrics">DATASET: 1,000+ IMAGE TENSORS</div>
@@ -451,6 +436,7 @@
                             </div>
                         </div>
 
+                        <!-- Project 5 -->
                         <div class="project-card">
                             <div class="project-title">Asian Paints Prediction</div>
                             <div class="project-metrics">TYPE: STATISTICAL ENSEMBLE ML</div>
@@ -462,6 +448,7 @@
                             </div>
                         </div>
 
+                        <!-- Project 6 -->
                         <div class="project-card">
                             <div class="project-title">AI Medical Chatbot</div>
                             <div class="project-metrics">INFRA: SECURE CONTROLLER BACKEND</div>
@@ -477,6 +464,7 @@
                     </div>
                 </div>
 
+                <!-- CHRONOLOGY MODULE -->
                 <div class="panel">
                     <div class="panel-title"><span>[MODULE: PROFESSIONAL_CHRONOLOGY]</span></div>
 
@@ -500,6 +488,7 @@
             </div>
         </div>
 
+        <!-- FOOTER HUD -->
         <footer class="footer-hud">
             <h3 style="font-size: 1.1rem; letter-spacing: 2px;">[GLOBAL_COMMUNICATION_LINK]</h3>
             
