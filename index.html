@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BALAJI V // CORE AI/ML DASHBOARD</title>
-    <!-- Icons & Typography -->
+    <title>BALAJI V // INTELLIGENCE PORTFOLIO</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #040812;
-            --panel-bg: rgba(9, 18, 36, 0.75);
+            --bg-color: #050911;
+            --panel-bg: rgba(10, 20, 38, 0.7);
             --accent-cyan: #00f2ff;
             --accent-blue: #0066ff;
             --accent-green: #10b981;
             --text-main: #f1f5f9;
-            --text-muted: #4b5e7d;
+            --text-muted: #64748b;
             --border-glow: rgba(0, 242, 255, 0.12);
         }
 
@@ -29,143 +28,139 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             overflow-x: hidden;
-            line-height: 1.5;
+            line-height: 1.6;
             padding: 20px;
         }
 
-        /* Ambient Terminal Grid Mask Overlay */
+        /* Subtle Ambient Scanline Vector Effect */
         body::before {
             content: " ";
             display: block;
             position: fixed;
             top: 0; left: 0; bottom: 0; right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(0, 242, 255, 0.015), rgba(0, 0, 0, 0), rgba(0, 102, 255, 0.015));
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.005), rgba(0, 0, 255, 0.02));
             z-index: 99999;
-            opacity: 0.4;
+            opacity: 0.3;
             pointer-events: none;
-            background-size: 100% 4px, 8px 100%;
+            background-size: 100% 4px, 6px 100%;
         }
 
         .container {
-            max-width: 1440px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        /* [HUD TERMINAL HEADER] */
+        /* Premium Minimalist HUD Header */
         header {
-            border: 1px solid rgba(0, 242, 255, 0.35);
+            border: 1px solid rgba(0, 242, 255, 0.3);
             background: var(--panel-bg);
-            padding: 1.25rem 2rem;
-            margin-bottom: 1.75rem;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
             box-shadow: 0 0 20px var(--border-glow);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         h1 {
             font-size: 2.2rem;
             font-weight: 900;
-            letter-spacing: 6px;
+            letter-spacing: 5px;
             color: #fff;
             text-shadow: 0 0 12px var(--accent-cyan);
         }
 
-        .telemetry-node {
+        .status-container {
+            display: flex;
+            align-items: center;
             font-size: 0.85rem;
             letter-spacing: 1px;
-            color: var(--text-muted);
         }
 
-        .telemetry-node span {
-            color: var(--accent-cyan);
-        }
-
-        /* [SPLIT-SCREEN DASHBOARD GRID LAYOUT] */
+        /* Adaptive Dashboard Split Grid Layout */
         .dashboard-grid {
             display: grid;
             grid-template-columns: 360px 1fr;
-            gap: 1.75rem;
+            gap: 2rem;
         }
 
         @media (max-width: 1024px) {
             .dashboard-grid { grid-template-columns: 1fr; }
         }
 
-        /* Cyber-Inspired Modular Panels */
+        /* Glassmorphic Modular Containers */
         .panel {
             background-color: var(--panel-bg);
             border: 1px solid rgba(0, 242, 255, 0.15);
-            border-radius: 2px;
-            padding: 1.5rem;
-            margin-bottom: 1.75rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            padding: 1.75rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
         }
 
         .panel-title {
             color: var(--accent-cyan);
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: bold;
-            margin-bottom: 1.25rem;
-            border-bottom: 1px dashed rgba(0, 242, 255, 0.2);
-            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px dashed rgba(0, 242, 255, 0.25);
+            padding-bottom: 0.6rem;
             letter-spacing: 2px;
-            display: flex;
-            justify-content: space-between;
+            text-shadow: 0 0 5px rgba(0, 242, 255, 0.5);
         }
 
-        /* Recruiter Control Action Links */
-        .action-cluster {
+        /* Recruiter Functional Action Controls */
+        .hero-buttons {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
-            margin-top: 1.25rem;
+            gap: 0.85rem;
+            margin-top: 1.5rem;
         }
 
         .btn {
-            padding: 11px 18px;
+            padding: 12px 20px;
             border: 1px solid var(--accent-blue);
-            background: rgba(0, 102, 255, 0.08);
+            background: rgba(0, 102, 255, 0.1);
             color: #fff;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.75rem;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             letter-spacing: 1.5px;
         }
 
         .btn:hover {
-            background: rgba(0, 242, 255, 0.15);
+            background: rgba(0, 242, 255, 0.18);
             border-color: var(--accent-cyan);
             box-shadow: 0 0 15px var(--border-glow);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
         .btn-primary {
             border-color: var(--accent-cyan);
-            background: rgba(0, 242, 255, 0.05);
+            background: rgba(0, 242, 255, 0.08);
         }
 
-        /* [RIGHT SYSTEM DEPLOYMENT MATRIX] */
-        .deployments-matrix {
+        /* Pipeline Project Card Matrix Architecture */
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 1.5rem;
         }
 
-        .deployment-node {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.03);
+        .project-card {
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             border-left: 4px solid var(--accent-blue);
             padding: 1.5rem;
             display: flex;
@@ -173,145 +168,150 @@
             transition: all 0.25s ease;
         }
 
-        .deployment-node:hover {
+        .project-card:hover {
             border-color: rgba(0, 242, 255, 0.25);
             border-left-color: var(--accent-cyan);
-            background: rgba(0, 242, 255, 0.015);
+            background: rgba(0, 242, 255, 0.02);
+            transform: scale(1.01);
         }
 
-        .node-title {
+        .project-title {
             font-size: 1.15rem;
             color: #fff;
             font-weight: bold;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
-        .node-telemetry {
+        .project-metrics {
             font-size: 0.75rem;
             color: var(--accent-cyan);
             background: rgba(0, 242, 255, 0.04);
-            padding: 0.35rem 0.75rem;
-            border-radius: 1px;
+            padding: 0.4rem 0.8rem;
+            border-radius: 2px;
             margin-bottom: 1rem;
             border-left: 2px solid var(--accent-cyan);
-            display: inline-block;
+            display: block;
             letter-spacing: 1px;
         }
 
-        .node-summary {
+        .project-desc {
             color: #cbd5e1;
             font-size: 0.85rem;
             margin-bottom: 1.25rem;
         }
 
-        /* Custom Structured Tech Badges */
-        .badge-array {
+        /* Tech Badges Container */
+        .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4rem;
+            gap: 0.5rem;
             margin-top: auto;
         }
 
-        .tech-badge {
-            background: rgba(0, 102, 255, 0.1);
-            border: 1px solid rgba(0, 102, 255, 0.25);
+        .tech-tag {
+            background: rgba(0, 102, 255, 0.12);
+            border: 1px solid rgba(0, 102, 255, 0.3);
             color: #93c5fd;
-            padding: 0.2rem 0.6rem;
+            padding: 0.25rem 0.65rem;
             font-size: 0.75rem;
+            border-radius: 2px;
         }
 
-        /* Competency Segments */
-        .matrix-segment {
-            margin-bottom: 1.25rem;
+        /* Skills Matrix Elements */
+        .skills-summary {
+            margin-bottom: 1.5rem;
         }
-        .matrix-segment h4 {
+        .skills-summary h4 {
             font-size: 0.8rem;
-            color: #64748b;
-            margin-bottom: 0.4rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
             letter-spacing: 1px;
         }
 
-        /* [PROFESSIONAL CHRONOLOGY TIMELINE] */
-        .chronology-leaf {
+        /* Professional Chronology Architecture */
+        .experience-item {
             border-left: 2px solid var(--accent-blue);
-            padding-left: 1.5rem;
+            padding-left: 1.75rem;
             position: relative;
-            margin-bottom: 1.75rem;
+            margin-bottom: 2rem;
         }
 
-        .chronology-leaf::before {
+        .experience-item::before {
             content: "";
             position: absolute;
             left: -6px;
-            top: 5px;
+            top: 6px;
             width: 10px;
             height: 10px;
             background: var(--bg-color);
             border: 2px solid var(--accent-cyan);
             border-radius: 50%;
-            box-shadow: 0 0 6px var(--accent-cyan);
+            box-shadow: 0 0 8px var(--accent-cyan);
         }
 
-        .leaf-header {
-            font-size: 1.15rem;
+        .exp-title {
+            font-size: 1.2rem;
             color: #fff;
             font-weight: bold;
         }
 
-        .leaf-meta {
+        .exp-meta {
             font-size: 0.8rem;
             color: var(--accent-cyan);
-            margin: 0.2rem 0 0.75rem 0;
+            margin: 0.25rem 0 0.85rem 0;
             letter-spacing: 0.5px;
         }
 
-        /* Institutional Credentials */
-        .academic-leaf {
+        /* Institutional Academic Sub-panels */
+        .education-item {
             background: rgba(255, 255, 255, 0.01);
             border: 1px solid rgba(255, 255, 255, 0.03);
-            padding: 1.15rem;
-            margin-bottom: 0.85rem;
+            padding: 1.25rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
         }
 
-        .academic-title {
+        .edu-title {
             font-size: 1rem;
             color: #fff;
             font-weight: bold;
         }
 
-        .academic-meta {
+        .edu-meta {
             font-size: 0.8rem;
             color: var(--accent-cyan);
             margin-top: 0.2rem;
         }
 
-        /* [GLOBAL COMMUNICATION LINK FOOTER] */
+        /* Foot HUD Infrastructure */
         .footer-hud {
             text-align: center;
             border-top: 1px dashed rgba(0, 242, 255, 0.2);
-            padding-top: 2rem;
-            margin-top: 3.5rem;
+            padding-top: 2.5rem;
+            margin-top: 4rem;
         }
 
-        .comms-array {
+        .contact-grid-hud {
             display: flex;
             justify-content: center;
             gap: 2.5rem;
             flex-wrap: wrap;
-            margin: 1rem 0;
-            font-size: 0.85rem;
+            margin: 1.25rem 0;
+            font-size: 0.9rem;
         }
 
-        .comms-node span {
+        .contact-item-hud span {
             color: var(--accent-cyan);
             font-weight: bold;
         }
 
+        /* System Color Overrides */
         .text-green { color: var(--accent-green) !important; }
+        .text-muted { color: var(--text-muted); }
 
         @media (max-width: 600px) {
-            header { flex-direction: column; text-align: center; gap: 0.85rem; }
-            .comms-array { flex-direction: column; gap: 0.6rem; }
+            header { flex-direction: column; text-align: center; gap: 1rem; }
+            .contact-grid-hud { flex-direction: column; gap: 0.75rem; }
         }
     </style>
 </head>
@@ -319,253 +319,232 @@
 
     <div class="container">
         
-        <!-- HUD TERMINAL HEADER -->
         <header>
             <div>
                 <h1>BALAJI V</h1>
             </div>
-            <div class="telemetry-node">
-                SYS_LOC: <span>CHENNAI, IN</span> // TELEMETRY: <span id="clock-node">FETCHING...</span>
+            <div class="status-container">
+                <div class="text-muted" id="hud-clock">LOC: CHENNAI, IN</div>
             </div>
         </header>
 
-        <!-- DASHBOARD GRID STRUCTURE -->
         <div class="dashboard-grid">
 
-            <!-- LEFT PROFILE MATRIX -->
-            <div class="left-profile-matrix">
+            <div class="left-column">
                 
-                <!-- ARCHITECT INFO & MISSION STATEMENT -->
                 <div class="panel">
                     <div class="panel-title">[MODULE: ARCHITECT_INFO]</div>
-                    <p style="font-size: 0.88rem; margin-bottom: 1rem; color: #fff;">
-                        Production-ready AI/ML Engineer and Data Scientist specializing in end-to-end machine learning system architectures.
+                    <p style="font-size: 0.88rem; margin-bottom: 1.25rem; color: #fff;">
+                        Production-ready AI/ML Engineer and Data Scientist specializing in processing end-to-end machine learning system architectures.
                     </p>
-                    <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1.25rem;">
-                        <strong>MISSION STATEMENT:</strong> Designing robust, low-latency processing systems by leveraging production-ready Retrieval-Augmented Generation (RAG) pipelines, deep spatial computer vision frameworks, and automated multi-output sequence forecasting engines.
+                    <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 1.5rem;">
+                        Proven background engineering enterprise Retrieval-Augmented Generation (RAG) engines, real-time computer vision networks, and statistical multi-step-ahead sequential forecasting pipelines.
                     </p>
                     
-                    <div class="action-cluster">
+                    <div class="hero-buttons">
                         <a href="https://ats-resume-analyzer-07.streamlit.app" class="btn btn-primary" target="_blank">
-                            <i class="fas fa-terminal text-green"></i> RUN_ATS_ANALYZER.EXE
+                            <i class="fas fa-satellite-dish text-green"></i> LIVE_ATS_ANALYZER.EXE
                         </a>
-                        <!-- Replace internal hash placeholder with production file link path -->
                         <a href="#" class="btn" target="_blank">
-                            <i class="fas fa-download text-green"></i> PULL_RESUME.SYS
+                            <i class="fas fa-file-download text-green"></i> DOWNLOAD_RESUME.SYS
                         </a>
                         <a href="https://github.com/Balaji-2001" class="btn" target="_blank">
-                            <i class="fab fa-github"></i> ACCESS_CORE_REPOS
+                            <i class="fab fa-github"></i> ACCESS_GITHUB_INDEX
                         </a>
                     </div>
                 </div>
 
-                <!-- TECHNICAL CORE MATRIX -->
                 <div class="panel">
                     <div class="panel-title">[MODULE: TECHNICAL_CORE]</div>
                     
-                    <div class="matrix-segment">
+                    <div class="skills-summary">
                         <h4>// COMPUTATION RUNTIMES</h4>
-                        <div class="badge-array">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Django</span>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
                         </div>
                     </div>
 
-                    <div class="matrix-segment">
-                        <h4>// DEEP SEQUENTIAL FORECASTING & COGNITION</h4>
-                        <div class="badge-array">
-                            <span class="tech-badge">CNN</span>
-                            <span class="tech-badge">LSTM</span>
-                            <span class="tech-badge">YOLOv8</span>
-                            <span class="tech-badge">Deep Learning</span>
+                    <div class="skills-summary">
+                        <h4>// DEEP COGNITIVE VISION & TIME-SERIES</h4>
+                        <div class="tech-stack">
+                            <span class="tech-tag">CNN</span>
+                            <span class="tech-tag">LSTM</span>
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">Deep Learning</span>
                         </div>
                     </div>
 
-                    <div class="matrix-segment">
-                        <h4>// RETRIEVAL INDEX EXTRACTION</h4>
-                        <div class="badge-array">
-                            <span class="tech-badge">FAISS</span>
-                            <span class="tech-badge">LangChain RAG</span>
-                            <span class="tech-badge">Vector Databases</span>
+                    <div class="skills-summary">
+                        <h4>// NATURAL LANGUAGE INDEX EXTRACTION</h4>
+                        <div class="tech-stack">
+                            <span class="tech-tag">FAISS</span>
+                            <span class="tech-tag">LangChain RAG</span>
+                            <span class="tech-tag">Vector DBs</span>
                         </div>
                     </div>
 
-                    <div class="matrix-segment">
+                    <div class="skills-summary">
                         <h4>// COMPUTER VISION INFRASTRUCTURE</h4>
-                        <div class="badge-array">
-                            <span class="tech-badge">OpenCV</span>
-                            <span class="tech-badge">Image Processing</span>
+                        <div class="tech-stack">
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Image Processing</span>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- RIGHT SYSTEM DEPLOYMENT MATRIX -->
-            <div class="right-system-matrix">
+            <div class="right-column">
                 
-                <!-- PROJECT DEPLOYMENTS MODULE -->
                 <div class="panel">
-                    <div class="panel-title">
-                        <span>[MODULE: PROJECT_DEPLOYMENTS]</span>
-                        <span style="color: var(--text-muted); font-size: 0.8rem;">STATUS: 06_ACTIVE</span>
-                    </div>
+                    <div class="panel-title">[MODULE: LIVE_PIPELINE_DEPLOYMENTS]</div>
 
-                    <div class="deployments-matrix">
+                    <div class="projects-grid">
                         
-                        <!-- Deployment 1 -->
-                        <div class="deployment-node">
-                            <div class="node-title">ATS Resume Analyzer</div>
-                            <div class="node-telemetry">PIPELINE RUN // RAG ENGINE // STREAMLIT</div>
-                            <p class="node-summary">Contextual matching system engineered via LangChain and FAISS vector indices. Implements real-time token keyword evaluation algorithms and semantic gap optimization to achieve a 90% matching precision baseline.</p>
-                            <div class="badge-array">
-                                <span class="tech-badge">LangChain</span>
-                                <span class="tech-badge">FAISS</span>
-                                <span class="tech-badge">Streamlit</span>
-                                <span class="tech-badge">TF-IDF</span>
+                        <div class="project-card">
+                            <div class="project-title">ATS Resume Analyzer</div>
+                            <div class="project-metrics">RAG PIPELINE // STREAMLIT DEPLOYMENT</div>
+                            <p class="project-desc">Advanced matching application mapping unstructured resumes straight against job specifications. Employs contextual keyword computation, semantic gap calculations, and missing feature extraction algorithms leveraging LangChain and FAISS vector scoring registries to achieve 90% match precision.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">LangChain</span>
+                                <span class="tech-tag">FAISS</span>
+                                <span class="tech-tag">Streamlit</span>
+                                <span class="tech-tag">TF-IDF</span>
                             </div>
-                            <div style="margin-top: 1.25rem; padding-top: 0.25rem;">
-                                <a href="https://ats-resume-analyzer-07.streamlit.app" target="_blank" class="btn" style="padding: 7px 14px; font-size: 0.75rem; width: max-content;">INITIALIZE_LAUNCH_NODE</a>
+                            <div style="margin-top: 1.25rem; padding-top: 0.5rem;">
+                                <a href="https://ats-resume-analyzer-07.streamlit.app" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.75rem; width: max-content;">EXECUTE_LIVE_NODE</a>
                             </div>
                         </div>
 
-                        <!-- Deployment 2 -->
-                        <div class="deployment-node">
-                            <div class="node-title">Winton Stock Challenge</div>
-                            <div class="node-telemetry">ACCURACY: 80%+ // TEMPORAL LSTM</div>
-                            <p class="node-summary">Sequential multi-step-ahead market trend predictor built using custom recurrent neural networks, tailored to process high-frequency input sequences while minimizing model convergence errors.</p>
-                            <div class="badge-array">
-                                <span class="tech-badge">LSTM</span>
+                        <div class="project-card">
+                            <div class="project-title">Winton Stock Challenge</div>
+                            <div class="project-metrics">ACCURACY: 80%+ // TEMPORAL LSTM</div>
+                            <p class="project-desc">High-performance deep learning pipeline running recurrent sequence structures engineered to estimate multi-step-ahead financial price trends while minimizing model loss distributions across dense public timelines.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">LSTM</span>
                                 <span class="tech-tag">Time Series</span>
-                                <span class="tech-badge">Python</span>
+                                <span class="tech-tag">Python</span>
                             </div>
                         </div>
 
-                        <!-- Deployment 3 -->
-                        <div class="deployment-node">
-                            <div class="node-title">Sign Language Matrix Detection</div>
-                            <div class="node-telemetry">ACCURACY: 90% // REAL-TIME VISION FRAMEWORK</div>
-                            <p class="node-summary">Deep spatial computer vision setup parsing live native camera streaming arrays to accurately identify and translate geometric hand gesture transformations instantaneously.</p>
-                            <div class="badge-array">
-                                <span class="tech-badge">TensorFlow</span>
-                                <span class="tech-badge">Keras</span>
-                                <span class="tech-badge">OpenCV</span>
-                                <span class="tech-badge">CNN</span>
+                        <div class="project-card">
+                            <div class="project-title">Sign Language Matrix Detection</div>
+                            <div class="project-metrics">ACCURACY: 90% // COMPUTER VISION ENGINE</div>
+                            <p class="project-desc">Real-time computer vision framework processing incoming live video buffers to evaluate spatial hand orientation transformations and hand gestures for interactive communication mapping solutions.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Keras</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">CNN</span>
                             </div>
                         </div>
 
-                        <!-- Deployment 4 -->
-                        <div class="deployment-node">
-                            <div class="node-title">Pothole Automated Tracking</div>
-                            <div class="node-telemetry">TRAINING ENVIRO: 1,000+ COMPUTE IMAGES</div>
-                            <p class="node-summary">Edge-optimized single-shot instance segmentation tracking infrastructure designed to automate physical infrastructure inspection workflows over varying illumination bounds.</p>
-                            <div class="badge-array">
-                                <span class="tech-badge">YOLOv8</span>
-                                <span class="tech-badge">OpenCV</span>
-                                <span class="tech-badge">Computer Vision</span>
+                        <div class="project-card">
+                            <div class="project-title">Pothole Detection Pipeline</div>
+                            <div class="project-metrics">DATASET: 1,000+ IMAGE TENSORS</div>
+                            <p class="project-desc">Object tracking framework utilizing single-shot deep boundary feature extractors trained specifically on multi-environmental image spaces for smart local infrastructural health mapping systems.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">YOLOv8</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Computer Vision</span>
                             </div>
                         </div>
 
-                        <!-- Deployment 5 -->
-                        <div class="deployment-node">
-                            <div class="node-title">Asian Paints Trend Architecture</div>
-                            <div class="node-telemetry">TYPE: STATISTICAL ENSEMBLE SYSTEM</div>
-                            <p class="project-desc">Time-series forecasting module extracting seasonal trend components and historical variance distributions from localized public commercial ledger data streams.</p>
-                            <div class="badge-array">
-                                <span class="tech-badge">Ensemble ML</span>
-                                <span class="tech-badge">Scikit-Learn</span>
-                                <span class="tech-badge">StatsModels</span>
+                        <div class="project-card">
+                            <div class="project-title">Asian Paints Trend Forecasting</div>
+                            <div class="project-metrics">STATISTICAL ENSEMBLE REGRESSION</div>
+                            <p class="project-desc">Ensemble forecasting asset that isolates seasonal volatility metrics and trend variance across public consumer market records via historical autoregressive estimators.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Ensemble ML</span>
+                                <span class="tech-tag">Scikit-Learn</span>
+                                <span class="tech-tag">StatsModels</span>
                             </div>
                         </div>
 
-                        <!-- Deployment 6 -->
-                        <div class="deployment-node">
-                            <div class="node-title">AI Medical Chatbot</div>
-                            <div class="node-telemetry">TARGET: RELATIONALLY SECURED SERVER CONSOLE</div>
-                            <p class="node-summary">Contextually-aware clinical language handler designed to capture physiological token properties, process symptom indices, and store execution transaction records down securely.</p>
-                            <div class="badge-array">
-                                <span class="tech-badge">Django</span>
-                                <span class="tech-badge">NLP</span>
-                                <span class="tech-badge">SQL</span>
-                                <span class="tech-badge">PythonAnywhere</span>
+                        <div class="project-card">
+                            <div class="project-title">AI Medical Relational Chatbot</div>
+                            <div class="project-metrics">ARCHITECTURE: SECURE INTEGRATED BACKEND</div>
+                            <p class="project-desc">Contextually-aware text engine designed to parse natural language clinical tokens, extract precise physiological symptom indices, and reliably commit transaction logs into relational database setups.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">NLP</span>
+                                <span class="tech-tag">SQL</span>
+                                <span class="tech-tag">PythonAnywhere</span>
                             </div>
                         </div>
 
                     </div>
                 </div>
 
-                <!-- PROFESSIONAL CHRONOLOGY MODULE -->
                 <div class="panel">
                     <div class="panel-title">[MODULE: PROFESSIONAL_CHRONOLOGY]</div>
 
-                    <div class="chronology-leaf">
-                        <div class="leaf-header text-green">Guest Lecturer</div>
-                        <div class="leaf-meta">Theivanai Ammal College for Women | June 2024 - May 2025</div>
+                    <div class="experience-item">
+                        <div class="exp-title text-green">Guest Lecturer</div>
+                        <div class="exp-meta">Theivanai Ammal College for Women | Villupuram, India // June 2024 - May 2025</div>
                         <p style="font-size: 0.85rem; color: #cbd5e1;">
-                            Directed practical technical laboratory engineering assemblies and lecture streams covering core Python execution engines, Django routing frameworks, and standard mathematical array handling inside statistical machine learning lines.
+                            Directed core computing development laboratory structures and designed theoretical models focusing on Python environments, web endpoints via Django architectures, and matrix evaluation calculations inside deep ML workflows for academic cohorts.
                         </p>
                     </div>
 
-                    <div class="chronology-leaf" style="border-left-color: var(--accent-cyan);">
-                        <div class="leaf-header text-green">Data Scientist Intern</div>
-                        <div class="leaf-meta">Wright Logic | Malaysia (Remote) // October 2023 - February 2024</div>
+                    <div class="experience-item" style="border-left-color: var(--accent-cyan);">
+                        <div class="exp-title text-green">Data Scientist Intern</div>
+                        <div class="exp-meta">Wright Logic | Malaysia (Remote) // October 2023 - February 2024</div>
                         <p style="font-size: 0.85rem; color: #cbd5e1;">
-                            Assembled sequential deep forecasting neural layers that scaled model accuracy metrics beyond an 80% baseline. Built and integrated robust text token analytics logic modules to analyze sentiment data streams.
+                            Assembled sequential deep forecasting units optimizing structural prediction patterns past an 80% baseline. Engineered textual token parsing logic tools to validate sentiment score variations on live system data streams.
                         </p>
                     </div>
                 </div>
 
-                <!-- ACADEMIC CREDENTIALS MODULE -->
                 <div class="panel">
                     <div class="panel-title">[MODULE: ACADEMIC_CREDENTIALS]</div>
                     
-                    <div class="academic-leaf">
-                        <div class="academic-title">Master of Science in Data Science</div>
-                        <div class="academic-meta">Periyar University // 2021 – 2023 <span style="color: #fff; float: right;">CGPA: 8.0/10</span></div>
+                    <div class="education-item">
+                        <div class="edu-title">Master of Science in Data Science</div>
+                        <div class="edu-meta">Periyar University // 2021 – 2023 <span style="color: #fff; float: right;">CGPA: 8.0/10</span></div>
                     </div>
 
-                    <div class="academic-leaf">
-                        <div class="academic-title">Bachelor of Science in Computer Science</div>
-                        <div class="academic-meta">Thiruvalluvar University // 2018 – 2021</div>
+                    <div class="education-item">
+                        <div class="edu-title">Bachelor of Science in Computer Science</div>
+                        <div class="edu-meta">Thiruvalluvar University // 2018 – 2021</div>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- GLOBAL COMMUNICATION LINK FOOTER -->
         <footer class="footer-hud">
-            <h3 style="font-size: 1.05rem; letter-spacing: 2px; color: #fff;">[GLOBAL_COMMUNICATION_LINK]</h3>
+            <h3 style="font-size: 1.1rem; letter-spacing: 2px; color: #fff;">[GLOBAL_COMMUNICATION_LINK]</h3>
             
-            <div class="comms-array">
-                <div class="comms-node"><span>TEL:</span> +91 7305283503</div>
-                <div class="comms-node"><span>NET_ADDR:</span> balajivasanthakumar2001@gmail.com</div>
+            <div class="contact-grid-hud">
+                <div class="contact-item-hud"><span>TEL:</span> +91 7305283503</div>
+                <div class="contact-item-hud"><span>NET_ADDR:</span> balajivasanthakumar2001@gmail.com</div>
             </div>
 
-            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; margin-bottom: 0.5rem;">
-                <a href="https://www.linkedin.com/in/balaji-v-aiml-engineer" target="_blank" class="btn" style="border-color: #0077b5; background: rgba(0, 119, 181, 0.08); padding: 9px 18px; font-size: 0.8rem;">
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; margin-bottom: 1rem;">
+                <a href="https://www.linkedin.com/in/balaji-v-aiml-engineer" target="_blank" class="btn" style="border-color: #0077b5; background: rgba(0, 119, 181, 0.08); padding: 10px 20px; font-size: 0.8rem;">
                     <i class="fab fa-linkedin-in"></i> SECURE_LINKEDIN_NODE
                 </a>
-                <a href="https://github.com/Balaji-2001" target="_blank" class="btn" style="border-color: #475569; background: rgba(255,255,255,0.01); padding: 9px 18px; font-size: 0.8rem;">
-                    <i class="fab fa-github"></i> REPOSITORY_INDEX
+                <a href="https://github.com/Balaji-2001" target="_blank" class="btn" style="border-color: #475569; background: rgba(255,255,255,0.01); padding: 10px 20px; font-size: 0.8rem;">
+                    <i class="fab fa-github"></i> CENTRAL_REPOSITORIES
                 </a>
             </div>
         </footer>
 
     </div>
 
-    <!-- Live Telemetry Clock Script -->
     <script>
-        function stepHUDClock() {
+        function runHUDClock() {
             const dateObj = new Date();
             const timestamp = dateObj.toISOString().replace('T', ' ').substring(0, 19);
-            const clockNode = document.getElementById('clock-node');
-            if (clockNode) {
-                clockNode.innerHTML = `${timestamp} UTC`;
+            const clockEl = document.getElementById('hud-clock');
+            if (clockEl) {
+                clockEl.innerHTML = `LOC: CHENNAI, IN // TIME_UTC: ${timestamp}`;
             }
         }
-        setInterval(stepHUDClock, 1000);
-        stepHUDClock();
+        setInterval(runHUDClock, 1000);
+        runHUDClock();
     </script>
 
 </body>
