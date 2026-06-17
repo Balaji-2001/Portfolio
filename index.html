@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J.A.R.V.I.S. // Balaji V | Production AI/ML Interface</title>
+    <title>BALAJI V // CORE INTERFACE</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -41,7 +41,7 @@
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), 
                         linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
             z-index: 99999;
-            opacity: 0.4;
+            opacity: 0.3;
             pointer-events: none;
             background-size: 100% 4px, 6px 100%;
         }
@@ -62,17 +62,6 @@
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(10px);
-            position: relative;
-        }
-
-        header::after {
-            content: "SYS_STATUS: READY // AUTH_VERIFIED";
-            position: absolute;
-            bottom: -18px;
-            right: 10px;
-            font-size: 0.7rem;
-            color: var(--accent-cyan);
-            opacity: 0.6;
         }
 
         h1 {
@@ -131,7 +120,6 @@
             padding: 1.5rem;
             margin-bottom: 2rem;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            position: relative;
         }
 
         .panel-title {
@@ -141,8 +129,6 @@
             margin-bottom: 1.2rem;
             border-bottom: 1px dashed rgba(0, 242, 255, 0.25);
             padding-bottom: 0.5rem;
-            display: flex;
-            justify-content: space-between;
             letter-spacing: 1px;
         }
 
@@ -204,7 +190,6 @@
             border-color: rgba(0, 242, 255, 0.3);
             border-left-color: var(--accent-cyan);
             background: rgba(0, 242, 255, 0.02);
-            transform: scale(1.01);
         }
 
         .project-title {
@@ -326,7 +311,6 @@
 
     <div class="container">
         
-        <!-- HEADER APPARATUS -->
         <header>
             <div>
                 <h1>BALAJI V</h1>
@@ -338,18 +322,12 @@
             </div>
         </header>
 
-        <!-- DASHBOARD BODY CONTAINER -->
         <div class="dashboard-grid">
 
-            <!-- LEFT HUD CONSOLE: PROFILING & TELEMETRY -->
             <div class="left-column">
                 
-                <!-- IDENTITY CARD -->
                 <div class="panel">
-                    <div class="panel-title">
-                        <span>[MODULE: ARCHITECT_INFO]</span>
-                        <span>v20.26</span>
-                    </div>
+                    <div class="panel-title">[MODULE: ARCHITECT_INFO]</div>
                     <p style="font-size: 0.85rem; margin-bottom: 1rem;">
                         Production-ready AI/ML Engineer specializing in end-to-end machine learning systems architectures.
                     </p>
@@ -370,11 +348,8 @@
                     </div>
                 </div>
 
-                <!-- SYSTEM MATRIX CAPABILITIES -->
                 <div class="panel">
-                    <div class="panel-title">
-                        <span>[MODULE: CORE_COMPETENCIES]</span>
-                    </div>
+                    <div class="panel-title">[MODULE: CORE_COMPETENCIES]</div>
                     
                     <div class="skills-summary">
                         <h4>// COMPUTATION ENVIRONMENT</h4>
@@ -414,19 +389,13 @@
 
             </div>
 
-            <!-- RIGHT HUD CONSOLE: REPOSITORIES & RECORD ARRAYS -->
             <div class="right-column">
                 
-                <!-- PIPELINE DEPLOYMENTS MODULE -->
                 <div class="panel">
-                    <div class="panel-title">
-                        <span>[MODULE: LIVE_PIPELINE_DEPLOYMENTS]</span>
-                        <span>REGISTRY: 06_ACTIVE</span>
-                    </div>
+                    <div class="panel-title">[MODULE: LIVE_PIPELINE_DEPLOYMENTS]</div>
 
                     <div class="projects-grid">
                         
-                        <!-- Project 1 -->
                         <div class="project-card">
                             <div class="project-title">ATS Resume Analyzer</div>
                             <div class="project-metrics">PRODUCTION RUN // RAG PIPELINE // STREAMLIT</div>
@@ -442,7 +411,6 @@
                             </div>
                         </div>
 
-                        <!-- Project 2 -->
                         <div class="project-card">
                             <div class="project-title">Winton Stock Challenge</div>
                             <div class="project-metrics">ACCURACY: 80%+ // MULTI-OUTPUT LSTM</div>
@@ -454,7 +422,6 @@
                             </div>
                         </div>
 
-                        <!-- Project 3 -->
                         <div class="project-card">
                             <div class="project-title">Sign Language Detection</div>
                             <div class="project-metrics">ACCURACY: 90% // REAL-TIME COMPUTER VISION</div>
@@ -467,7 +434,6 @@
                             </div>
                         </div>
 
-                        <!-- Project 4 -->
                         <div class="project-card">
                             <div class="project-title">Pothole Detection (YOLOv8)</div>
                             <div class="project-metrics">DATASET: 1,000+ IMAGE TENSORS</div>
@@ -479,7 +445,6 @@
                             </div>
                         </div>
 
-                        <!-- Project 5 -->
                         <div class="project-card">
                             <div class="project-title">Asian Paints Prediction</div>
                             <div class="project-metrics">TYPE: STATISTICAL ENSEMBLE ML</div>
@@ -491,7 +456,6 @@
                             </div>
                         </div>
 
-                        <!-- Project 6 -->
                         <div class="project-card">
                             <div class="project-title">AI Medical Chatbot</div>
                             <div class="project-metrics">INFRA: SECURE CONTROLLER BACKEND</div>
@@ -507,11 +471,8 @@
                     </div>
                 </div>
 
-                <!-- PROFESSIONAL ARCHITECTURE TIMELINE -->
                 <div class="panel">
-                    <div class="panel-title">
-                        <span>[MODULE: PROFESSIONAL_CHRONOLOGY]</span>
-                    </div>
+                    <div class="panel-title">[MODULE: PROFESSIONAL_CHRONOLOGY]</div>
 
                     <div class="experience-item">
                         <div class="exp-title text-green">Guest Lecturer</div>
@@ -533,10 +494,8 @@
             </div>
         </div>
 
-        <!-- FOOT-HUD FRAMEWORK -->
         <footer class="footer-hud">
             <h3 style="font-size: 1.1rem; letter-spacing: 2px;">[GLOBAL_COMMUNICATION_LINK]</h3>
-            <p class="text-muted" style="font-size: 0.8rem; margin-top: 0.25rem;">AVAILABILITY // OPEN TO WORLDWIDE REMOTE & ON-SITE ENGAGEMENTS</p>
             
             <div class="contact-grid-hud">
                 <div class="contact-item-hud"><span>TEL:</span> +91 7305283503</div>
@@ -556,7 +515,6 @@
     </div>
 
     <script>
-        // Dynamic System Clock Apparatus
         function updateHUDClock() {
             const now = new Date();
             const timeString = now.toISOString().replace('T', ' ').substring(0, 19);
